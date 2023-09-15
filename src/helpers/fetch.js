@@ -1,5 +1,13 @@
 const baseUrl = process.env.REACT_APP_API_URL;
 
+
+/**
+ * helper fetch
+ * 
+ * @param {String} endpoint endpoint al cual apunta la petición 
+ * @param {Object} data body que se le envia a la petición
+ * @param {String} method método de la petición
+ */
 const buscar = async (endpoint, data, method = 'GET') => {
 	const url = `${baseUrl}/${endpoint}`;
 

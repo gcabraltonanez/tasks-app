@@ -1,6 +1,9 @@
 import React from 'react';
-import Tarea from './Tarea';
+import Task from './Task';
 
+/**
+ * @param {Array} tareas arreglo de tareas para mostrar la tabla 
+ */
 const Table = ({tareas}) => {
 	return (
 		<table className='table'>
@@ -15,7 +18,7 @@ const Table = ({tareas}) => {
 
 			<tbody className='table-group-divider'>
 				{tareas.map((tarea) => (
-					<Tarea tarea={tarea}></Tarea>
+					<Task tarea={tarea}></Task>
 				))}
 			</tbody>
 		</table>

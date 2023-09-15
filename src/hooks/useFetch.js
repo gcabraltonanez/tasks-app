@@ -2,6 +2,13 @@ import {useEffect, useState} from 'react';
 import fetch from '../helpers/fetch';
 import buscar from '../helpers/fetch';
 
+/**
+ * hook useFetch
+ * @param {string} url utl al cual va a realizar la petición con el helper buscar
+ * @param {Object} reqBody objeto que se le envía a la petición
+ * @param {string} method método de la petición
+ */
+
 const useFetch = (url, reqBody, method) => {
 	const [data, setData] = useState(null);
 	const [loading, setLoading] = useState(null);

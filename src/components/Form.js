@@ -1,29 +1,32 @@
 import {useEffect, useState} from 'react';
 import buscar from '../helpers/fetch';
 
+//componente Form
 const Form = ({refresh}) => {
 	useEffect(() => {
-		refresh('get-tasks', null, 'GET');
+		refresh('tasks', null, 'GET');
 	}, []);
 
+	//estado del componente
 	const [value, setValue] = useState({
 		descripcion: '',
 		horaInicio: new Date().toLocaleTimeString(),
 		horaFinalizacion: new Date().toLocaleTimeString(),
 	});
 
+	//funcion que maneja la creación de una nueva tarea
 	const handleSubmit = async (event) => {
 		event.preventDefault();
 		if (value.descripcion !== '') {
-			buscar('new-task', value, 'POST');
+			buscar('tasks', value, 'POST');
 			setValue({
 				descripcion: '',
 				horaInicio: new Date().toLocaleTimeString(),
 				horaFinalizacion: new Date().toLocaleTimeString(),
 			});
-			refresh('get-tasks', null, 'GET');
+			refresh('tasks', null, 'GET');
 		}
-		refresh('get-tasks', null, 'GET');
+		refresh('tasks', null, 'GET');
 	};
 
 	return (
